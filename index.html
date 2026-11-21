@@ -1,22 +1,337 @@
 <!DOCTYPE html>
-
 <html lang="vi">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
+<title>CS2 Gaming Hub</title>
 
-    <title>Website của tôi</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    background: #0b0e13;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: #11151d;
+    border-bottom: 1px solid #292f3a;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff8c00;
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: #bbb;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff8c00;
+}
+
+/* HERO */
+.hero {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(circle at center,
+        #3a2515 0%,
+        #17120e 35%,
+        #0b0e13 75%);
+}
+
+.hero h1 {
+    font-size: clamp(40px, 7vw, 80px);
+    font-weight: 900;
+    animation: fadeIn 1s ease;
+}
+
+.hero h1 span {
+    color: #ff8c00;
+    text-shadow: 0 0 30px #ff8c0066;
+}
+
+.hero p {
+    color: #aaa;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.btn {
+    margin-top: 35px;
+    padding: 15px 35px;
+    background: #ff8c00;
+    color: black;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ffb347;
+    transform: scale(1.08);
+    box-shadow: 0 0 25px #ff8c0077;
+}
+
+/* STATS */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+    background: #11151d;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat h2 {
+    color: #ff8c00;
+    font-size: 35px;
+}
+
+.stat p {
+    color: #888;
+    margin-top: 8px;
+}
+
+/* SECTION */
+section {
+    padding: 70px 8%;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+.section-title span {
+    color: #ff8c00;
+}
+
+/* MAPS */
+.maps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.map-card {
+    background: #171c26;
+    border: 1px solid #292f3a;
+    padding: 30px;
+    transition: 0.3s;
+}
+
+.map-card:hover {
+    transform: translateY(-8px);
+    border-color: #ff8c00;
+    box-shadow: 0 0 20px #ff8c0022;
+}
+
+.map-card h3 {
+    color: #ff8c00;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.map-card p {
+    color: #999;
+}
+
+/* WEAPON */
+.weapon {
+    background: #11151d;
+    text-align: center;
+}
+
+.weapon-box {
+    max-width: 600px;
+    margin: auto;
+    background: #171c26;
+    padding: 40px;
+    border: 1px solid #292f3a;
+}
+
+.weapon-box h2 {
+    color: #ff8c00;
+    font-size: 35px;
+}
+
+.weapon-box p {
+    color: #aaa;
+    margin: 20px 0;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #666;
+    border-top: 1px solid #292f3a;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <h1>Xin chào!</h1>
+<nav>
+    <div class="logo">CS2 HUB</div>
 
-    <p>Đây là website đầu tiên của tôi.</p>
+    <div>
+        <a href="#maps">Maps</a>
+        <a href="#weapons">Weapons</a>
+        <a href="#about">About</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>COUNTER <span>STRIKE</span></h1>
+
+    <p>WELCOME TO THE WORLD OF CS2</p>
+
+    <button class="btn" onclick="startGame()">
+        ENTER THE BATTLE
+    </button>
+</div>
+
+<div class="stats">
+    <div class="stat">
+        <h2>5v5</h2>
+        <p>Competitive</p>
+    </div>
+
+    <div class="stat">
+        <h2>MR12</h2>
+        <p>Match Format</p>
+    </div>
+
+    <div class="stat">
+        <h2>FPS</h2>
+        <p>First Person Shooter</p>
+    </div>
+</div>
+
+<section id="maps">
+    <h2 class="section-title">
+        POPULAR <span>MAPS</span>
+    </h2>
+
+    <div class="maps">
+        <div class="map-card">
+            <h3>Mirage</h3>
+            <p>A classic map with tactical gameplay.</p>
+        </div>
+
+        <div class="map-card">
+            <h3>Dust II</h3>
+            <p>The legendary Counter-Strike map.</p>
+        </div>
+
+        <div class="map-card">
+            <h3>Inferno</h3>
+            <p>Close combat and strategic control.</p>
+        </div>
+
+        <div class="map-card">
+            <h3>Ancient</h3>
+            <p>A battle for control of the ruins.</p>
+        </div>
+    </div>
+</section>
+
+<section class="weapon" id="weapons">
+    <h2 class="section-title">
+        YOUR <span>ARSENAL</span>
+    </h2>
+
+    <div class="weapon-box">
+        <h2>AK-47</h2>
+
+        <p>
+            A powerful rifle used by the Terrorist side.
+            Master your aim and control your recoil.
+        </p>
+
+        <button class="btn" onclick="showWeapon()">
+            INSPECT WEAPON
+        </button>
+
+        <p id="weapon-info"></p>
+    </div>
+</section>
+
+<section id="about">
+    <h2 class="section-title">
+        ABOUT <span>CS2</span>
+    </h2>
+
+    <p style="color:#aaa; line-height:1.8;">
+        Counter-Strike 2 is a tactical first-person shooter
+        developed by Valve. Teamwork, aim and strategy
+        are the keys to victory.
+    </p>
+</section>
+
+<footer>
+    CS2 GAMING HUB | Fan-made website
+</footer>
+
+<script>
+function startGame() {
+    document.getElementById("maps").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function showWeapon() {
+    document.getElementById("weapon-info").innerHTML =
+        "AK-47 selected! Ready for battle.";
+}
+</script>
 
 </body>
-
 </html>
-Tôi là Thái Bảo Nam
+Created by: Thái Bảo Nam
+
+
+
